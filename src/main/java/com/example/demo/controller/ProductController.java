@@ -30,10 +30,18 @@ public class ProductController {
     }
 
     // 상품 ID로 상품 상세 정보를 조회하는 API
+    // @GetMapping("/{productId}")
+    // public ResponseEntity<List<Product>> getProductDetailsByProductId(@PathVariable Long productId) {
+    //     log.info("상품 번호: "+productId);
+    //     List<Product> products = productService.getProductsByProductId(productId);
+    //     return ResponseEntity.ok(products);
+    // }
+
+    // 상품 ID로 상품 옵션을 포함한 상품 상세 정보를 조회하는 API
     @GetMapping("/{productId}")
-    public ResponseEntity<List<Product>> getProductDetailsByProductId(@PathVariable Long productId) {
+    public ResponseEntity<List<Object[]>> getProductWithOptions(@PathVariable Long productId) {
         log.info("상품 번호: "+productId);
-        List<Product> products = productService.getProductsByProductId(productId);
-        return products.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+        List<Object[]> productWithOptions = productService.getProductWithOptions(productId);
+        return ResponseEntity.ok(productWithOptions);
     }
 }

@@ -4,6 +4,7 @@ public class CartItemDto {
 
     private Long productId;
     private String productName;
+    private String option;
     private int quantity;
 
     // 기본 생성자
@@ -13,6 +14,7 @@ public class CartItemDto {
     public CartItemDto(Long productId, String productName, int quantity) {
         this.productId = productId;
         this.productName = productName;
+        this.option = option;
         this.quantity = quantity;
     }
 
@@ -31,6 +33,14 @@ public class CartItemDto {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getOption() {
+        return option;
+    }
+
+    public void setOption(String option) {
+        this.option = option;
     }
 
     public int getQuantity() {

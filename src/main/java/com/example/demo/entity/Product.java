@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import java.util.List;
+import javax.persistence.*;
+
 @Entity
 @Getter
 @Setter
@@ -20,4 +23,8 @@ public class Product {
     private String name;
     private String description;
     private Double price;
+    
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY) // ProductOption과 1:N 관계 설정
+    private List<ProductOption> options;  // 상품의 옵션 리스트
+
 }

@@ -11,9 +11,9 @@ public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Long productId;
     private String productName;
+    private String option;
     private int quantity;
 
     // Getters and Setters
@@ -39,6 +39,14 @@ public class CartItem {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getOption() {
+        return option;
+    }
+
+    public void setOption(String option) {
+        this.option = option;
     }
 
     public int getQuantity() {

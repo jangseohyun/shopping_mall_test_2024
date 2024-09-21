@@ -26,4 +26,8 @@ public class ProductService {
     public List<Product> getProductsByProductId(Long productId) {
         return productRepository.findByProductId(productId);
     }    
+
+    public List<Object[]> getProductWithOptions(Long productId) {
+        return productRepository.findProductWithOptionsById(productId);
+    }    
 }

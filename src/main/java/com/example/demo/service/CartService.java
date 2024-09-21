@@ -21,6 +21,7 @@ public class CartService {
         CartItem cartItem = new CartItem();
         cartItem.setProductId(cartItemDto.getProductId());
         cartItem.setProductName(cartItemDto.getProductName());
+        cartItem.setOption(cartItemDto.getOption());
         cartItem.setQuantity(cartItemDto.getQuantity());
 
         // 장바구니에 아이템 저장
